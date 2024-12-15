@@ -16,7 +16,7 @@ homepage = "https://github.com/eclypse-org/eclypse-html-report"
 repository = "https://github.com/eclypse-org/eclypse-html-report"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.9,<3.12"
 datapane = "^0.17.0"
 plotly = "^5.24.1"
 pyvis = "^0.3.2"
@@ -44,7 +44,6 @@ optional = true
 mypy = "^1.13.0"
 wheel = "^0.45.0"
 setuptools = "^75.5.0"
-twine = "^5.1.1"
 
 
 [build-system]

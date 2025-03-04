@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "eclypse-html-report"
-version = "0.1.2"
+version = "0.1.3"
 description = "A tool to generate an HTML report from the results of an ECLYPSE simulation"
 authors = [
     "Valerio De Caro <valerio.decaro@di.unipi.it>",
@@ -59,7 +59,7 @@ eclypse-html-report = "eclypse_html_report.cli:main"
 
 [tool.commitizen]
 name = "cz_conventional_commits"
-version = "0.1.2"
+version = "0.1.3"
 tag_format = "$version"
 version_files = [
     "pyproject.toml:version",

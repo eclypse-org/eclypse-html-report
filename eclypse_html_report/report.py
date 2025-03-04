@@ -258,11 +258,11 @@ class HTMLReport:
         has_im = self.int_df is not None
 
         if self.app_df is not None:
-            apps = self.app_df["app_id"].unique()
+            apps = self.app_df["application_id"].unique()
         elif self.srv_df is not None:
-            apps = self.srv_df["app_id"].unique()
+            apps = self.srv_df["application_id"].unique()
         elif self.int_df is not None:
-            apps = self.int_df["app_id"].unique()
+            apps = self.int_df["application_id"].unique()
         else:
             click.secho("No application data found.", err=True, color="red", bold=True)
             return dp.Page(title="Applications", blocks=[dp.Text("No data found.")])
@@ -294,13 +294,13 @@ class HTMLReport:
             app_blocks = []
             for metric in _aggregation_dict(*app_metrics, *srv_metrics, *int_metrics):
                 df = self.app_df[
-                    (self.app_df["app_id"] == app)
+                    (self.app_df["application_id"] == app)
                     & (self.app_df["callback_id"].str.contains(metric))
                 ]
 
                 df_svs = (
                     self.srv_df[
-                        (self.srv_df["app_id"] == app)
+                        (self.srv_df["application_id"] == app)
                         & (self.srv_df["callback_id"].str.contains(metric))
                     ]
                     if has_sm
@@ -309,7 +309,7 @@ class HTMLReport:
 
                 df_int = (
                     self.int_df[
-                        (self.int_df["app_id"] == app)
+                        (self.int_df["application_id"] == app)
                         & (self.int_df["callback_id"].str.contains(metric))
                     ]
                     if has_im
